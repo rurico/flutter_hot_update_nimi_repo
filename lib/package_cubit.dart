@@ -11,10 +11,8 @@ class PackageCubit extends HydratedCubit<List<PackageAtom>> {
   final Http client;
 
   void download(String name) async {
-    await client.downloadPackage(name);
-    final jsonStr =
-        await File('${await client.applicationDirectoryPath}/$name.ews')
-            .readAsString();
+    final path = await client.downloadPackage(name);
+    final jsonStr = await File(path).readAsString();
     add(name, jsonStr);
   }
 

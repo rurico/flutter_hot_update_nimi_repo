@@ -7,10 +7,9 @@ class Http extends DioForNative {
   Future<String> get applicationDirectoryPath async =>
       (await getApplicationDocumentsDirectory()).path;
 
-  Future<void> downloadPackage(String name) async {
-    await download(
-      '$name.ews',
-      '${await applicationDirectoryPath}/$name.ews',
-    );
+  Future<String> downloadPackage(String name) async {
+    final path = '${await applicationDirectoryPath}/$name.ews';
+    await download('$name.ews', path);
+    return path;
   }
 }
