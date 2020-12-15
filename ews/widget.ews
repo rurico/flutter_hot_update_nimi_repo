@@ -1,0 +1,15 @@
+{
+  "type": "Container",
+  "color": "#000000",
+  "alignment": "center",
+  "child": {
+    "type": "Text",
+    "data": "dynamic widget",
+    "maxLines": 3,
+    "overflow": "ellipsis",
+    "style": {
+      "color": "#ffff00",
+      "fontSize": 32.0
+    }
+  }
+}
